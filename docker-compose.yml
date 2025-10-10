@@ -1,0 +1,25 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.dev
+    container_name: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    tty: true
+    stdin_open: true
+
+  prod:
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.prod
+    container_name: production
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
