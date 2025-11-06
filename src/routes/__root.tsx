@@ -2,7 +2,7 @@ import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
-import { Header } from '../components/layout/Header'
+import { Header } from '@/components/layout/Header'
 
 export const Route = createRootRoute({
   component: () => (
