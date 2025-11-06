@@ -1,4 +1,5 @@
-import NavItem from '../ui/navItem';
+import  NavItem  from '@/components/ui/NavItem';
+import { Search, Settings } from 'lucide-react';
 
 export function Header() {
   const headerBgColor = 'bg-gray-800 dark:bg-gray-900'; 
@@ -14,9 +15,9 @@ export function Header() {
         </a>
 
         {/* ナビゲーションリンク群 */}
-        <div className="flex space-x-2">
-          <NavItem label="検索" />
-          <NavItem label="設定" />
+        <div className="flex  ml-auto">
+          <NavItem  icon={Search} />
+          <NavItem  icon={Settings} />
         </div>
       </nav>
     </header>
