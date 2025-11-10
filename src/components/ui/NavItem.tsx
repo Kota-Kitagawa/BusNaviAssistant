@@ -5,11 +5,12 @@ interface NavItemProps {
   label?: string;
   // lucide-react 等のアイコンコンポーネントを渡す
   icon?: React.ElementType;
+  onClick: () => void;
 }
 
-export default function NavItem({ label, icon }: NavItemProps) {
+export default function NavItem({ label, icon, onClick }: NavItemProps) {
   const buttonClass = clsx(
-    'flex items-center space-x-1 px-1 py-2 cursor-pointer text-white transition duration-100 group'
+    'flex items-center space-x-1 px-1 py-2 cursor-pointer text-black transition duration-100 group dark:text-white',
   );
 
   const iconWrapper = clsx(
@@ -20,13 +21,13 @@ export default function NavItem({ label, icon }: NavItemProps) {
   const Icon = icon;
 
   return (
-    <div className={buttonClass} role="button" tabIndex={0}>
+    <button className={buttonClass} onClick={onClick} tabIndex={0}>
       {Icon && (
         <span className={iconWrapper} aria-hidden>
           <Icon className="w-5 h-5" />
         </span>
       )}
       {label && <span className="text-sm">{label}</span>}
-    </div>
+    </button>
   );
 }
