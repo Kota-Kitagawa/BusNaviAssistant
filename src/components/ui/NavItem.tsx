@@ -23,7 +23,7 @@ export default function NavItem({ label, icon, onClick }: NavItemProps) {
   return (
     <button className={buttonClass} onClick={onClick} tabIndex={0}>
       {Icon && (
-        <span className={iconWrapper} aria-hidden>
+        <span className={iconWrapper} aria-hidden="true">
           <Icon className="w-5 h-5" />
         </span>
       )}

@@ -50,8 +50,8 @@ export default function ThemeButton(){
         aria-pressed={isDark}
         title={isDark ? "ライトモードに切替" : "ダークモードに切替"}
       >
-        <span className={iconWrapper} aria-hidden>
-          {isDark ?  <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+        <span className={iconWrapper} aria-hidden="true">
+          {isDark ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
         </span>
       </div>
     );

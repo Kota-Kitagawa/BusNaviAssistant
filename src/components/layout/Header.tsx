@@ -1,5 +1,5 @@
 import  NavItem  from '@/components/ui/NavItem';
-import { Search, Settings } from 'lucide-react';
+import { Search } from 'lucide-react';
 import ThemeButton from '@/components/ui/ThemeButton';
 
 export function Header() {
