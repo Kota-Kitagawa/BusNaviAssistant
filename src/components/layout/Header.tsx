@@ -1,6 +1,6 @@
 import  NavItem  from '@/components/ui/NavItem';
 import { Search } from 'lucide-react';
-import ThemeButton from '@/components/ui/ThemeButton';
+import { ThemeButton } from '@/components/ui/ThemeButton';
 
 export function Header() {
   const headerBgColor = 'bg-white dark:bg-gray-900'; 
