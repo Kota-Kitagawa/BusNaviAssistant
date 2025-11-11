@@ -5,8 +5,8 @@ export function StopBusName() {
     const { busNumber } = BusNumberRoute.useParams() 
     return (
         <>
-        <Header />
-        <h1>Bus Number: {busNumber}</h1>
+            <Header />
+            <h1>Bus Number: {busNumber}</h1>
         </>
     )
 }
