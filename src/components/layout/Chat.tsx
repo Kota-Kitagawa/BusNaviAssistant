@@ -7,7 +7,7 @@ export function Chat() {
     return (
         <>
             <aside className="
-            hidden md:block fixed right-0 top-0 h-full w-80
+            hidden md:block fixed left-0 top-16 bottom-0 h-full w-80
             bg-white shadow-xl border-l border-gray-200 z-40
             dark:bg-black dark:border-gray-700"
             >
@@ -21,7 +21,7 @@ export function Chat() {
                 <MessageCircle size={24} />
             </button>
             {isOpen && (
-                <div className="md:hidden fixed inset-0 bg-black bg-opacity-50 flex item-center justify-center z-60"
+                <div className="md:hidden fixed inset-0  bg-opacity-50 flex item-center justify-center z-60"
                     onClick={() => setIsOpen(false)}>
                     <div className="bg-white dark:bg-black w-full h-3/4 max-w-md rounded-t-xl shadow-2xl animate-slide-up"
                         onClick={(e) => e.stopPropagation()}>
