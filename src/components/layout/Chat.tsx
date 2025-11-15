@@ -1,30 +1,47 @@
-import React, { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
-import { ChatInterface } from "../ui/ChatInterface";
+import React, { useState } from 'react';
+import { MessageCircle, X } from 'lucide-react';
+import { ChatInterface } from '../ui/ChatInterface';
+import { Header } from './Header';
 
 export function Chat() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
     return (
         <>
-            <aside className="
-            hidden md:block fixed left-0 top-16 bottom-0 h-full w-80
-            bg-white shadow-xl border-l border-gray-200 z-40
-            dark:bg-black dark:border-gray-700"
+            {/* md以上は左サイドバー内にヘッダーを含めて固定表示 */}
+            <aside
+                className="hidden md:flex fixed left-0 top-0 bottom-0 z-40 w-80
+                   bg-white border-r border-gray-200 dark:bg-black dark:border-gray-700 flex-col"
+                aria-label="Sidebar"
             >
-                <ChatInterface />
+                <Header inSidebar={true} />
+
+                {/* チャット本体をヘッダー下に伸ばす */}
+                <div className="flex-1 overflow-y-auto">
+                    <ChatInterface />
+                </div>
             </aside>
-            <button onClick={(() => setIsOpen(true))}
+
+            {/* モバイル用フローティングボタン */}
+            <button
+                onClick={() => setIsOpen(true)}
                 className="md:hidden fixed bottom-4 right-6 w-14 h-14 rounded-full
-                text-white bg-blue-600 flex items-center justify-center shadow-lg z-50
-                hover:bg-blue-700 transition duration-300"
+                   text-white bg-blue-600 flex items-center justify-center shadow-lg z-50
+                   hover:bg-blue-700 transition duration-300"
+                aria-label="Open chat"
             >
                 <MessageCircle size={24} />
             </button>
+
             {isOpen && (
-                <div className="md:hidden fixed inset-0  bg-opacity-50 flex item-center justify-center z-60"
-                    onClick={() => setIsOpen(false)}>
-                    <div className="bg-white dark:bg-black w-full h-3/4 max-w-md rounded-t-xl shadow-2xl animate-slide-up"
-                        onClick={(e) => e.stopPropagation()}>
+                <div
+                    className="md:hidden fixed inset-0  bg-opacity-50 flex items-center justify-center z-60"
+                    onClick={() => setIsOpen(false)}
+                >
+                    <div
+                        className="bg-white dark:w-full h-3/4 max-w-md rounded-t-xl shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <div className="h-full relative">
                             <button
                                 onClick={() => setIsOpen(false)}
@@ -39,7 +56,5 @@ export function Chat() {
                 </div>
             )}
         </>
-    )
+    );
 }
-
-
