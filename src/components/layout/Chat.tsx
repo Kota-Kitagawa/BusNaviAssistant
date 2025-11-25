@@ -10,7 +10,7 @@ export function Chat() {
             {/* サイドバー（左固定）。sm以上で表示、モバイルは非表示 */}
             <aside
                 id="default-sidebar"
-                className="hidden sm:block fixed top-0 left-0 z-40 w-64 h-screen overflow-y-auto bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
+                className="hidden md:block fixed top-0 left-0 z-40 w-64 h-screen overflow-y-auto bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
                 aria-label="Sidebar"
             >
                 {/* サイドバーコンテンツ */}
@@ -22,14 +22,14 @@ export function Chat() {
             {/* モバイル用フローティングボタン */}
             <button
                 onClick={() => setIsOpen(true)}
-                className="sm:hidden fixed bottom-4 right-6 w-14 h-14 rounded-full text-white bg-blue-600 flex items-center justify-center shadow-lg z-50 hover:bg-blue-700 transition duration-300"
+                className="md:hidden fixed bottom-4 right-6 w-14 h-14 rounded-full text-white bg-blue-600 flex items-center justify-center shadow-lg z-50 hover:bg-blue-700 transition duration-300"
                 aria-label="Open chat"
             >
                 <MessageCircle size={24} />
             </button>
 
             {isOpen && (
-                <div className="sm:hidden fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-60" onClick={() => setIsOpen(false)}>
+                <div className="md:hidden fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-60" onClick={() => setIsOpen(false)}>
                     <div className="bg-white dark:bg-black w-full h-3/4 max-w-md rounded-t-xl shadow-2xl" onClick={(e) => e.stopPropagation()}>
                         <div className="h-full relative">
                             <button

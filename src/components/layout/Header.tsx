@@ -8,7 +8,7 @@ export function Header() {
 
   return (
     <div className="fixed top-0 w-full md:static bg-[#282c34] px-4 py-4 sm:px-6 lg:px-8">
-      <header className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 sm:p-6 transition-colors">
+      <header className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 md:p-6 transition-colors">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-4 flex-1">
             <button className="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors">
