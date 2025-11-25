@@ -1,43 +1,35 @@
 import React from 'react';
-import NavItem from '@/components/ui/NavItem';
-import { Search } from 'lucide-react';
+import { NavItem } from '@/components/ui/NavItem';
 import { ThemeButton } from '@/components/ui/ThemeButton';
+import { Search, Menu } from 'lucide-react';
 
-type HeaderProps = {
-  inSidebar: boolean; 
-};
+export function Header() {
+  // const wrapperBgColor = 'bg-gray-100 dark:bg-gray-950';
 
-export function Header({ inSidebar = false }: HeaderProps) {
-  const headerBgColor = 'bg-white dark:bg-gray-900';
-
-  if (inSidebar) {
-    return (
-      <div className={`${headerBgColor} w-full border-b border-gray-200 dark:border-gray-700`}>
-        <div className="flex items-center h-16 px-4">
-          <a href="/" className="px-2 text-lg font-bold text-black dark:text-white">
-            ARIVE.
-          </a>
-          <div className="ml-auto flex items-center space-x-2">
-            <NavItem icon={Search} onClick={() => {}} />
-            <ThemeButton />
+  return (
+    <div className="fixed top-0 w-full md:static bg-[#282c34] px-4 py-4 sm:px-6 lg:px-8">
+      <header className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 sm:p-6 transition-colors">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4 flex-1">
+            <button className="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors">
+              <Menu className="w-6 h-6 text-slate-700" />
+            </button>
+            <div className="flex-1 max-w-md">
+              <div className="relative">
+                <a href="/" className="text-xl font-bold text-black dark:text-white">
+                  ARIVE.
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="flex ml-auto items-center space-x-2">
+              <NavItem icon={Search} onClick={() => { }} />
+              <ThemeButton />
+            </div>
           </div>
         </div>
-      </div>
-    );
-  }
-
-  // モバイルで画面上部に固定するヘッダー
-  return (
-    <header className={`${headerBgColor}`}>
-      <nav className="flex items-center max-w-7xl mx-auto h-16 px-4">
-        <a href="/" className="px-4 text-xl font-bold text-black dark:text-white">
-          ARIVE.
-        </a>
-        <div className="flex ml-auto items-center">
-          <NavItem icon={Search} onClick={() => {}} />
-          <ThemeButton />
-        </div>
-      </nav>
-    </header>
+      </header>
+    </div>
   );
 }
