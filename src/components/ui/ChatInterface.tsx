@@ -3,9 +3,13 @@ import React from "react";
 export function ChatInterface() {
     return (
         <div className="flex flex-col h-full">
-            <div className="rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 flex flex-col  overflow-hidden shadow-sm mx-4 mt-4">
-                <div className="p-3  border-b border-gray-200 dark:border-gray-700 font-bold text-center">
-                    チャット
+            <div className="px-4 mt-4">
+                <div className="p-3 text-center">
+                    <div className="inline-block relative">
+                        <span className="font-bold">チャット</span>
+                        {/* 下線は文字幅より少し大きくする。light:黒 / dark:白 で見えるようにする */}
+                        <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 w-[calc(100%+12px)] h-1 bg-black dark:bg-white rounded" />
+                    </div>
                 </div>
             </div>
 
