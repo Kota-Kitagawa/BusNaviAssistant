@@ -3,12 +3,12 @@ import clsx from 'clsx';
 
 interface NavItemProps {
   label?: string;
-  // lucide-react 等のアイコンコンポーネントを渡す
+
   icon?: React.ElementType;
   onClick: () => void;
 }
 
-export default function NavItem({ label, icon, onClick }: NavItemProps) {
+export function NavItem({ label, icon, onClick }: NavItemProps) {
   const buttonClass = clsx(
     'flex items-center space-x-1 px-1 py-2 cursor-pointer text-black transition duration-100 group dark:text-white',
   );
