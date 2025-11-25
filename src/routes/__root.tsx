@@ -1,24 +1,22 @@
+import type React from 'react';
+
 import { Outlet, createRootRoute, createRoute } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 
+import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
-import { Chat } from '@/components/layout/Chat';
-import type React from 'react';
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className='md:hidden'>
-        <Header inSidebar={true} />
-      </div>
-
-      <main className="md:pt-0 md:ml-80 min-h-[calc(100vh-4rem)]">
-        <div className="max-w-7xl mx-auto">
-          <Outlet />
-        </div>
+      <div className="flex h-screen bg-slate-50">
+      <Sidebar />
+      <main className="flex-1 overflow-y-auto">
+        <Header />
+        <Outlet />
       </main>
-      <Chat />
+    </div>
 
       <TanStackDevtools
         config={{
